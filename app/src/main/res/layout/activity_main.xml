@@ -1,77 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center">
+        android:orientation="vertical">
 
-    <!-- LOGIN SECTION -->
-    <LinearLayout
-            android:id="@+id/loginSection"
+        <!-- TOOLBAR / HAMBURGER MENU (Visible only after login) -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="?attr/colorPrimary"
+            app:title="StyleSlot"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:navigationIconTint="?attr/colorOnPrimary"
+            android:visibility="gone" />
 
-        <EditText
-                android:id="@+id/etUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Username (type 'admin')" />
-
-        <EditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Password (type '123')"
-                android:layout_marginBottom="16dp"/>
-
-        <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="LOGIN" />
-    </LinearLayout>
-
-    <!-- LOGOUT BUTTON (Hidden initially) -->
-    <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="LOGOUT"
-            android:textSize="12sp"
-            android:visibility="gone"
-            android:layout_marginBottom="8dp" />
-
-    <!-- WRAPPER FOR EXISTING BOOKING UI -->
-    <LinearLayout
-            android:id="@+id/bookingSection"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:padding="24dp"
+            android:gravity="center">
 
-        <Spinner
-                android:id="@+id/spinnerTimeSlots"
+            <!-- LOGIN SECTION -->
+            <LinearLayout
+                android:id="@+id/loginSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp" />
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
-        <Button
-                android:id="@+id/btnBook"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_title"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_subtitle"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:layout_marginBottom="32dp"/>
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="Username (type 'admin')"
+                    android:autofillHints="username"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="textPassword"
+                    android:hint="Password (type '123')"
+                    android:autofillHints="password"
+                    android:layout_marginBottom="24dp"/>
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="LOGIN" />
+            </LinearLayout>
+
+            <!-- WRAPPER FOR EXISTING BOOKING UI -->
+            <LinearLayout
+                android:id="@+id/bookingSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BOOK APPOINTMENT"
-                android:layout_marginBottom="16dp" />
+                android:orientation="vertical"
+                android:visibility="gone">
 
-        <TextView
-                android:id="@+id/tvStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:gravity="center" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="StyleSlot: Booking Engine Demo"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Time Slot for Dan (Barber):"
+                    android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerTimeSlots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:id="@+id/btnBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CONFIRM BOOKING" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:text="Status: Waiting for input..."/>
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <!-- HAMBURGER NAVIGATION DRAWER -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

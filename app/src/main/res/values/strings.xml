@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BarbershopAppLab4</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="login_title">StyleSlot</string>
+    <string name="login_subtitle">Barbershop Admin Portal</string>
 </resources>
