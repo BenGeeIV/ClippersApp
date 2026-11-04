@@ -11,6 +11,8 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import androidx.appcompat.app.AppCompatDelegate
+import com.google.android.material.materialswitch.MaterialSwitch
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,10 +21,33 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Load saved preference from SharedPreferences & apply night mode before setContentView
+        val sharedPref = getSharedPreferences("app_prefs", MODE_PRIVATE)
+        val isDarkMode = sharedPref.getBoolean("dark_mode", false)
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         setContentView(R.layout.activity_main)
 
         // Creating Notification Channel
         createNotificationChannel()
+
+        val switchDarkMode = findViewById<MaterialSwitch>(R.id.switchDarkMode)
+        switchDarkMode.isChecked = isDarkMode
+
+        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            val mode = if (isChecked) {
+                AppCompatDelegate.MODE_NIGHT_YES
+            } else {
+                AppCompatDelegate.MODE_NIGHT_NO
+            }
+            AppCompatDelegate.setDefaultNightMode(mode)
+            sharedPref.edit().putBoolean("dark_mode", isChecked).apply()
+        }
 
         val spinnerTimeSlots = findViewById<Spinner>(R.id.spinnerTimeSlots)
         val btnBook = findViewById<Button>(R.id.btnBook)

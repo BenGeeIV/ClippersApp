@@ -40,7 +40,12 @@
         android:layout_marginTop="24dp"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:text="Status: Waiting for input..."/>
 
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switchDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dark Mode"
+        android:layout_marginBottom="16dp"/>
 </LinearLayout>
