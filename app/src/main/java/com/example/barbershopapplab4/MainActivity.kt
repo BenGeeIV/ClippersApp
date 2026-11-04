@@ -11,6 +11,9 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +23,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val loginSection = findViewById<View>(R.id.loginSection)
+        val bookingSection = findViewById<View>(R.id.bookingSection)
+        val etUsername = findViewById<EditText>(R.id.etUsername)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val btnLogout = findViewById<Button>(R.id.btnLogout)
+
+        // LOGIN LOGIC
+        btnLogin.setOnClickListener {
+            if (etUsername.text.toString() == "admin" && etPassword.text.toString() == "123") {
+                loginSection.visibility = View.GONE
+                bookingSection.visibility = View.VISIBLE
+                btnLogout.visibility = View.VISIBLE
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // LOGOUT LOGIC
+        btnLogout.setOnClickListener {
+            loginSection.visibility = View.VISIBLE
+            bookingSection.visibility = View.GONE
+            btnLogout.visibility = View.GONE
+            etUsername.text.clear()
+            etPassword.text.clear()
+        }
 
         // Creating Notification Channel
         createNotificationChannel()
