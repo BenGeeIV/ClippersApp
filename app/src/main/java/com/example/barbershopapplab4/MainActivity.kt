@@ -3,12 +3,14 @@ package com.example.barbershopapplab4
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.appcompat.app.AppCompatDelegate
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         // Creating Notification Channel
         createNotificationChannel()
 
+        // FEATURE 4: Dark Mode
         val switchDarkMode = findViewById<MaterialSwitch>(R.id.switchDarkMode)
         switchDarkMode.isChecked = isDarkMode
 
@@ -65,13 +68,18 @@ class MainActivity : AppCompatActivity() {
             // FEATURE 1: Conflict Validation Logic
             if (bookedSlots.contains(selectedSlot)) {
                 // "Time is already booked"
-                tvStatus.setTextColor(android.graphics.Color.RED)
-                tvStatus.text = "ERROR: $selectedSlot is already booked. Please choose another time."
+                // FEATURE 5: Toast Notification
+                val message = "ERROR: $selectedSlot is already booked. Please choose another time."
+                tvStatus.setTextColor(Color.RED)
+                tvStatus.text = message
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             } else {
                 // "Time is available! Save it."
                 bookedSlots.add(selectedSlot)
-                tvStatus.setTextColor(android.graphics.Color.parseColor("#006400")) // Dark Green
-                tvStatus.text = "SUCCESS: Appointment confirmed for $selectedSlot."
+                val message = "SUCCESS: Appointment confirmed for $selectedSlot."
+                tvStatus.setTextColor(Color.parseColor("#006400")) // Dark Green
+                tvStatus.text = message
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
                 // FEATURE 2: Trigger Notification
                 sendNotification(selectedSlot)
@@ -101,6 +109,23 @@ class MainActivity : AppCompatActivity() {
             }
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
+        }
+        val switchDarkMode = findViewById<MaterialSwitch>(R.id.switchDarkMode)
+
+// Load saved preference from SharedPreferences
+        val sharedPref = getSharedPreferences("app_prefs", MODE_PRIVATE)
+        val isDarkMode = sharedPref.getBoolean("dark_mode", false)
+        switchDarkMode.isChecked = isDarkMode
+
+        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            val mode = if (isChecked) {
+                AppCompatDelegate.MODE_NIGHT_YES
+            } else {
+                AppCompatDelegate.MODE_NIGHT_NO
+            }
+            AppCompatDelegate.setDefaultNightMode(mode)
+
+            sharedPref.edit().putBoolean("dark_mode", isChecked).apply()
         }
     }
 }
