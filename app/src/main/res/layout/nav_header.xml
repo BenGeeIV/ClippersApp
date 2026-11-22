@@ -2,24 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:background="?attr/colorPrimary"
+    android:background="@color/header_bg"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingStart="20dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/bg_logo_badge"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:text="SS"
+        android:textColor="@color/header_accent"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="StyleSlot Barbershop"
-        android:textColor="?attr/colorOnPrimary"
+        android:textColor="@color/header_on"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:letterSpacing="0.08"
         android:text="Admin Portal"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="14sp" />
+        android:textAllCaps="true"
+        android:textColor="@color/header_accent"
+        android:textSize="12sp" />
 
 </LinearLayout>
