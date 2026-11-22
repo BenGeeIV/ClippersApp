@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Existing colors (kept, names unchanged) -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="status_success">#006400</color>
-    <color name="status_error">#B00020</color>
+    <color name="status_success">#1B7F3B</color>
+    <color name="status_error">#B3261E</color>
+
+    <!-- Brand palette: barbershop navy + brass gold -->
+    <color name="brand_navy">#1B2A41</color>
+    <color name="brand_gold">#C8963E</color>
+
+    <color name="header_bg">#1B2A41</color>
+    <color name="header_on">#FFFFFF</color>
+    <color name="header_accent">#E3B661</color>
+
+    <color name="md_primary">#1B2A41</color>
+    <color name="md_on_primary">#FFFFFF</color>
+    <color name="md_primary_container">#DCE4F2</color>
+    <color name="md_on_primary_container">#0B1626</color>
+    <color name="md_secondary">#9A6B1C</color>
+    <color name="md_on_secondary">#FFFFFF</color>
+    <color name="md_secondary_container">#F6E6C8</color>
+    <color name="md_on_secondary_container">#3A2600</color>
+    <color name="md_background">#F6F4EF</color>
+    <color name="md_on_background">#1C1B19</color>
+    <color name="md_surface">#FFFFFF</color>
+    <color name="md_on_surface">#1C1B19</color>
+    <color name="md_surface_variant">#ECE7DD</color>
+    <color name="md_on_surface_variant">#4F4B42</color>
+    <color name="md_outline">#8C877C</color>
+    <color name="md_error">#B3261E</color>
+    <color name="md_on_error">#FFFFFF</color>
 </resources>
