@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47037810640",
+    "project_id": "clippers-d5eb9",
+    "storage_bucket": "clippers-d5eb9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47037810640:android:8dba91621906592d20dbd5",
+        "android_client_info": {
+          "package_name": "com.example.barbershopapplab4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfio3VJ9g0PCqhlmcSIVKImfy65mYzfDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

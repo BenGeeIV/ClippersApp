@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="?android:attr/colorBackground">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin Dashboard"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manage customer appointments"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+    <!-- APPOINTMENT STATISTICS TITLE -->
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Appointment Overview"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+    <!-- FIRST ROW -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/txtTotalActive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:background="#E3F2FD"
+                android:text="Active\n0"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+        <TextView
+                android:id="@+id/txtOnlineBookings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:background="#E8F5E9"
+                android:text="Online\n0"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <!-- SECOND ROW -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/txtWalkInBookings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:background="#FFF3E0"
+                android:text="Walk-in\n0"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+        <TextView
+                android:id="@+id/txtCancelledBookings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:background="#FFEBEE"
+                android:text="Cancelled\n0"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <!-- ADMIN CREATED BOOKINGS -->
+    <TextView
+            android:id="@+id/txtAdminCreatedBookings"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:background="#F3E5F5"
+            android:text="Admin-created bookings: 0"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+    <!-- CREATE APPOINTMENT -->
+    <Button
+            android:id="@+id/btnCreateAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Appointment"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp" />
+
+    <!-- REFRESH -->
+    <Button
+            android:id="@+id/btnRefreshAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refresh Appointments"
+            android:layout_marginBottom="8dp" />
+
+    <!-- HISTORY -->
+    <Button
+            android:id="@+id/btnAppointmentHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Cancelled Appointments"
+            android:layout_marginBottom="12dp" />
+
+    <!-- APPOINTMENTS TITLE -->
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All Appointments"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+    <TextView
+            android:id="@+id/tvEmptyAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No appointments found."
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:visibility="gone" />
+
+    <!-- APPOINTMENT LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,225 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawerLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <!-- MAIN CONTENT CONTAINER -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?android:attr/colorBackground"
-        android:orientation="vertical">
-
-        <!-- TOOLBAR / HAMBURGER MENU (Visible only after login) -->
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/header_bg"
-            android:elevation="4dp"
-            android:visibility="gone"
-            app:navigationIconTint="@color/header_on"
-            app:title="StyleSlot"
-            app:titleTextColor="@color/header_on" />
+            android:layout_height="match_parent"
+            android:background="?android:attr/colorBackground"
+            android:orientation="vertical">
+
+        <!-- TOOLBAR / HAMBURGER MENU -->
+        <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/header_bg"
+                android:elevation="4dp"
+                android:visibility="gone"
+                app:navigationIconTint="@color/header_on"
+                app:title="StyleSlot"
+                app:titleTextColor="@color/header_on" />
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:fillViewport="true">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="24dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="24dp">
 
                 <!-- LOGIN SECTION -->
                 <LinearLayout
-                    android:id="@+id/loginSection"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="84dp"
-                        android:layout_height="84dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@drawable/bg_logo_badge"
-                        android:gravity="center"
-                        android:importantForAccessibility="no"
-                        android:text="SS"
-                        android:textColor="@color/header_accent"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:letterSpacing="0.04"
-                        android:text="@string/login_title"
-                        android:textColor="?attr/colorOnSurface"
-                        android:textSize="32sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="28dp"
-                        android:letterSpacing="0.06"
-                        android:text="@string/login_subtitle"
-                        android:textAllCaps="true"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:textSize="12sp" />
-
-                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/loginSection"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardBackgroundColor="?attr/colorSurface"
-                        app:cardCornerRadius="24dp"
-                        app:cardElevation="3dp"
-                        app:strokeWidth="0dp">
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
 
-                        <LinearLayout
+                    <TextView
+                            android:layout_width="84dp"
+                            android:layout_height="84dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/bg_logo_badge"
+                            android:gravity="center"
+                            android:importantForAccessibility="no"
+                            android:text="SS"
+                            android:textColor="@color/header_accent"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:letterSpacing="0.04"
+                            android:text="@string/login_title"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="28dp"
+                            android:letterSpacing="0.06"
+                            android:text="@string/login_subtitle"
+                            android:textAllCaps="true"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="12sp" />
+
+                    <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
+                            app:cardBackgroundColor="?attr/colorSurface"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="3dp"
+                            app:strokeWidth="0dp">
 
-                            <com.google.android.material.textfield.TextInputLayout
-                                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="14dp"
-                                android:hint="Username (type 'admin')"
-                                app:boxCornerRadiusBottomEnd="14dp"
-                                app:boxCornerRadiusBottomStart="14dp"
-                                app:boxCornerRadiusTopEnd="14dp"
-                                app:boxCornerRadiusTopStart="14dp">
+                                android:orientation="vertical"
+                                android:padding="20dp">
 
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/etUsername"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:autofillHints="username"
-                                    android:inputType="text"
-                                    android:minHeight="48dp" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
+                            <!-- EMAIL ADDRESS -->
                             <com.google.android.material.textfield.TextInputLayout
-                                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="22dp"
-                                android:hint="Password (type '123')"
-                                app:boxCornerRadiusBottomEnd="14dp"
-                                app:boxCornerRadiusBottomStart="14dp"
-                                app:boxCornerRadiusTopEnd="14dp"
-                                app:boxCornerRadiusTopStart="14dp"
-                                app:endIconMode="password_toggle">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/etPassword"
+                                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:autofillHints="password"
-                                    android:inputType="textPassword"
-                                    android:minHeight="48dp" />
+                                    android:layout_marginBottom="14dp"
+                                    android:hint="Email Address"
+                                    app:boxCornerRadiusBottomEnd="14dp"
+                                    app:boxCornerRadiusBottomStart="14dp"
+                                    app:boxCornerRadiusTopEnd="14dp"
+                                    app:boxCornerRadiusTopStart="14dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etUsername"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:autofillHints="emailAddress"
+                                        android:inputType="textEmailAddress"
+                                        android:minHeight="48dp" />
+
                             </com.google.android.material.textfield.TextInputLayout>
 
+                            <!-- PASSWORD -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="14dp"
+                                    android:hint="Password"
+                                    app:boxCornerRadiusBottomEnd="14dp"
+                                    app:boxCornerRadiusBottomStart="14dp"
+                                    app:boxCornerRadiusTopEnd="14dp"
+                                    app:boxCornerRadiusTopStart="14dp"
+                                    app:endIconMode="password_toggle">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etPassword"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:autofillHints="password"
+                                        android:inputType="textPassword"
+                                        android:minHeight="48dp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <!-- LOGIN BUTTON -->
                             <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnLogin"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:letterSpacing="0.1"
-                                android:minHeight="56dp"
-                                android:text="LOGIN"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp" />
+                                    android:id="@+id/btnLogin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="56dp"
+                                    android:text="LOGIN"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp" />
+
+                            <!-- REGISTER BUTTON -->
+                            <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnRegister"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:minHeight="52dp"
+                                    android:text="CREATE ACCOUNT"
+                                    android:textSize="14sp"
+                                    app:cornerRadius="16dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
-                <!-- WRAPPER FOR EXISTING BOOKING UI -->
+                <!-- BOOKING SECTION -->
                 <LinearLayout
-                    android:id="@+id/bookingSection"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:text="StyleSlot: Booking Engine Demo"
-                        android:textColor="?attr/colorOnSurface"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-
-                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/bookingSection"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardBackgroundColor="?attr/colorSurface"
-                        app:cardCornerRadius="24dp"
-                        app:cardElevation="3dp"
-                        app:strokeWidth="0dp">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
-                        <LinearLayout
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:text="StyleSlot: Booking Engine Demo"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
+                            app:cardBackgroundColor="?attr/colorSurface"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="3dp"
+                            app:strokeWidth="0dp">
 
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                            <!-- BARBER AND TIME SLOT LABEL -->
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="Select Time Slot for Dan (Barber):"
-                                android:textColor="?attr/colorOnSurfaceVariant"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Select Time Slot for Dan (Barber):"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
 
+                            <!-- SELECT APPOINTMENT DATE BUTTON -->
+                            <Button
+                                    android:id="@+id/btnSelectDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp"
+                                    android:text="SELECT APPOINTMENT DATE" />
+
+                            <!-- SELECTED DATE DISPLAY -->
+                            <TextView
+                                    android:id="@+id/tvSelectedDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="16dp"
+                                    android:gravity="center"
+                                    android:text="No date selected"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            <!-- TIME SLOT SPINNER -->
                             <Spinner
-                                android:id="@+id/spinnerTimeSlots"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="22dp"
-                                android:background="@drawable/bg_spinner"
-                                android:minHeight="56dp"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="40dp" />
+                                    android:id="@+id/spinnerTimeSlots"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="22dp"
+                                    android:background="@drawable/bg_spinner"
+                                    android:minHeight="56dp"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="40dp" />
 
+                            <!-- CONFIRM BOOKING BUTTON -->
                             <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnBook"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:letterSpacing="0.1"
-                                android:minHeight="56dp"
-                                android:text="CONFIRM BOOKING"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp" />
+                                    android:id="@+id/btnBook"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:letterSpacing="0.1"
+                                    android:minHeight="56dp"
+                                    android:text="CONFIRM BOOKING"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
+                    <!-- BOOKING STATUS -->
                     <TextView
-                        android:id="@+id/tvStatus"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/bg_status"
-                        android:padding="16dp"
-                        android:text="Status: Waiting for input..."
-                        android:textAlignment="center"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:textSize="16sp" />
+                            android:id="@+id/tvStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_status"
+                            android:padding="16dp"
+                            android:text="Status: Waiting for input..."
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="16sp" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -228,12 +272,12 @@
 
     <!-- HAMBURGER NAVIGATION DRAWER -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:itemHorizontalPadding="24dp"
-        app:menu="@menu/drawer_menu" />
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:itemHorizontalPadding="24dp"
+            app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
